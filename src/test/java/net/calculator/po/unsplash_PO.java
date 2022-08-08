@@ -43,7 +43,7 @@ WebDriver driver;
 		
 		//Title.click();
 		//Thread.sleep(2000);
-		action.moveToElement(gotit).click().perform();
+		//action.moveToElement(gotit).click().perform();
 		//Thread.sleep(1000);
 		action.moveToElement(search).click().perform();
 		search.sendKeys(input);
@@ -57,16 +57,10 @@ WebDriver driver;
 		action.moveToElement(image).build().perform();
 		//Thread.sleep(500);
 		action.moveToElement(image).click().perform();
-		//Thread.sleep(1000);
+		Thread.sleep(1000);
 		WebElement image2 = driver.findElement(By.xpath("//button[1]/div[2]/div[2]/div[1]/img[1]"));
-		if (image2 != null) {
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-			image2.isDisplayed();
-		}else if (image2 == null) {
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-			action.moveToElement(image2).build().perform();
-			image2.isDisplayed();
-		}
+		
+		image2.isDisplayed();
 		
 		File srcFile = (image2.getScreenshotAs(OutputType.FILE));
 		FileUtils.copyToDirectory(srcFile, new File("C:\\net.calculator_Maven\\Screenshots"));

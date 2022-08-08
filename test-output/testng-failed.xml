@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="net.calculator.Test.Least_Common_MultipleTest">
+      <class name="net.calculator.Test.Unsplash_Test">
         <methods>
+          <include name="Test"/>
           <include name="TearDown"/>
-          <include name="Test_Other"/>
           <include name="Setup"/>
         </methods>
-      </class> <!-- net.calculator.Test.Least_Common_MultipleTest -->
+      </class> <!-- net.calculator.Test.Unsplash_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

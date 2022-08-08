@@ -140,13 +140,7 @@ public class Main_Test extends base{
 		driver.get("https://www.calculator.net/dice-roller.html");
 		vdr.mover(15,"5");
 	}
-	@Test(priority = 11)
-	public void Test_unsplash() throws InterruptedException, IOException 
-	{
-		unsplash_PO Other = new unsplash_PO(driver);
-		driver.get("https://unsplash.com/");
-		Other.links("cat");
-	}
+	
 	@AfterMethod
 	public  void TearDown()
 	{
