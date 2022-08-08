@@ -1,5 +1,6 @@
 package net.calculator.po;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -27,6 +28,7 @@ public class Main_Financial_PO {
 		
 	
 		
+		@SuppressWarnings("unused")
 		public void links() throws InterruptedException 
 		{
 
@@ -37,13 +39,14 @@ public class Main_Financial_PO {
 			int num = 30;
 			for (int x =1; x<num;x++)
 			{
+				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 			WebElement link = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div["+x+"]/a[1]"));
 			Actions action = new Actions(driver);
 			action.moveToElement(link).build().perform();
 			JavascriptExecutor js = (JavascriptExecutor)driver;
 			js.executeScript("window.scrollBy(0,50)", link);
 			action.sendKeys(Keys.F5);
-			Thread.sleep(4000);
+			//Thread.sleep(4000);
 			link.getText();
 			action.sendKeys(Keys.F5);
 			String [] array= new String [] 
@@ -84,28 +87,36 @@ public class Main_Financial_PO {
 		      }*/
 			sa.assertEquals(list2.get(x-1), link.getText());
 			System.out.println(list2.get(x-1) + " is Asserted.");
-			link.click();
-			Thread.sleep(3000);
+			if (link != null) {
+				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+				link.click();
+			}else if (link == null) {
+				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+				action.moveToElement(link).build().perform();
+				link.click();
+			}
+			//Thread.sleep(3000);
 			driver.navigate().back();
 			
-			Thread.sleep(2000);
+			//Thread.sleep(2000);
 			
             }
 		}
+		@SuppressWarnings("unused")
 		public void links2() throws InterruptedException
 		{
 			Thread.sleep(3000);
 			
 			for (int y =1; y<34;y++)
 			{
-				
+				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));	
 			WebElement link = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div["+y+"]/a[1]"));
 			SoftAssert sa = new SoftAssert();
 			Actions action = new Actions(driver);
 			action.moveToElement(link).build().perform();
 			JavascriptExecutor js = (JavascriptExecutor)driver;
 			js.executeScript("window.scrollBy(0,50)", link);
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			link.getText();
 			action.sendKeys(Keys.F5);
 			String [] array= new String [] 
@@ -131,8 +142,15 @@ public class Main_Financial_PO {
 		         list2.add(text);}
 			sa.assertEquals(list2.get(y-1), link.getText());
 			System.out.println(list2.get(y-1) + " is Asserted.");
-			link.click();
-			Thread.sleep(3000);
+			if (link != null) {
+				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+				link.click();
+			}else if (link == null) {
+				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+				action.moveToElement(link).build().perform();
+				link.click();
+			}
+			//Thread.sleep(3000);
 			driver.navigate().back();
 			//Thread.sleep(2000);
 			action.sendKeys(Keys.F5);

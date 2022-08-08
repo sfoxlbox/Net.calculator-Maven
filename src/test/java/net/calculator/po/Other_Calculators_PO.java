@@ -1,5 +1,6 @@
 package net.calculator.po;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,12 +26,14 @@ WebDriver driver;
 	@FindBy (how =How.XPATH, using= "/html[1]/body[1]/div[3]/div[1]/h1[1]")
 	WebElement Title2;
 	
+	@SuppressWarnings("unused")
 	public void links() throws InterruptedException
 	{
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("window.scrollBy(0,400)", "");
 		for (int x =1; x<11;x++)
 		{
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		WebElement link = driver.findElement(By.xpath("//table[1]/tbody[1]/tr[1]/td[4]/ul[1]/li["+x+"]/a"));
 		link.getText();
 		Actions action = new Actions(driver);
@@ -47,11 +50,18 @@ WebDriver driver;
 		sa.assertEquals(list2.get(x-1), link.getText());
 		System.out.println("link is : "+link.getText());
 		System.out.println(list2.get(x-1) + " is Asserted.");
-		link.click();
-		Thread.sleep(800);
+		if (link != null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			link.click();
+		}else if (link == null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			action.moveToElement(link).build().perform();
+			link.click();
+		}
+		//Thread.sleep(800);
 		System.out.println("Title of the Page :"+Title2.getText());
 		driver.navigate().back();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		}
 	} 
 }

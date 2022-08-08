@@ -2,6 +2,7 @@ package net.calculator.po;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -41,24 +42,32 @@ WebDriver driver;
 		Actions action = new Actions(driver);
 		
 		//Title.click();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		action.moveToElement(gotit).click().perform();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		action.moveToElement(search).click().perform();
 		search.sendKeys(input);
 		action.moveToElement(search).sendKeys(Keys.ENTER).perform();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		//action.moveToElement(botton).sendKeys(Keys.ENTER).perform();
 		action.sendKeys(Keys.F5).perform();
 		for (int y=1; y < 4; y++) {
 		for (int x=1; x < 5; x++) {
 			WebElement image = driver.findElement(By.xpath("//div[1]/div["+y+"]/figure["+x+"]/div[1]/div[1]/div[1]/div[1]/a[1]/div[1]/div[2]/div[1]/img[1]"));
 		action.moveToElement(image).build().perform();
-		Thread.sleep(500);
+		//Thread.sleep(500);
 		action.moveToElement(image).click().perform();
 		//Thread.sleep(1000);
 		WebElement image2 = driver.findElement(By.xpath("//button[1]/div[2]/div[2]/div[1]/img[1]"));
-		image2.isDisplayed();
+		if (image2 != null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			image2.isDisplayed();
+		}else if (image2 == null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			action.moveToElement(image2).build().perform();
+			image2.isDisplayed();
+		}
+		
 		File srcFile = (image2.getScreenshotAs(OutputType.FILE));
 		FileUtils.copyToDirectory(srcFile, new File("C:\\net.calculator_Maven\\Screenshots"));
 		

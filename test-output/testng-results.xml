@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-07T19:05:10 EDT" name="Default suite" finished-at="2022-08-07T19:05:24 EDT" duration-ms="14247">
+  <suite started-at="2022-08-07T21:40:49 EDT" name="Default suite" finished-at="2022-08-07T21:42:15 EDT" duration-ms="86427">
     <groups>
     </groups>
-    <test started-at="2022-08-07T19:05:10 EDT" name="Default test" finished-at="2022-08-07T19:05:24 EDT" duration-ms="14247">
-      <class name="net.calculator.Test.Least_Common_MultipleTest">
-        <test-method is-config="true" signature="Setup()[pri:0, instance:net.calculator.Test.Least_Common_MultipleTest@294425a7]" started-at="2022-08-07T19:05:10 EDT" name="Setup" finished-at="2022-08-07T19:05:14 EDT" duration-ms="3462" status="PASS">
+    <test started-at="2022-08-07T21:40:49 EDT" name="Default test" finished-at="2022-08-07T21:42:15 EDT" duration-ms="86427">
+      <class name="net.calculator.Test.Main_FinancialTest">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:net.calculator.Test.Main_FinancialTest@67d48005]" started-at="2022-08-07T21:40:49 EDT" name="Setup" finished-at="2022-08-07T21:40:53 EDT" duration-ms="4035" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="Test_Other()[pri:0, instance:net.calculator.Test.Least_Common_MultipleTest@294425a7]" started-at="2022-08-07T19:05:14 EDT" name="Test_Other" finished-at="2022-08-07T19:05:24 EDT" duration-ms="10344" status="PASS">
+        <test-method signature="Test_Links1()[pri:1, instance:net.calculator.Test.Main_FinancialTest@67d48005]" started-at="2022-08-07T21:40:53 EDT" name="Test_Links1" finished-at="2022-08-07T21:41:30 EDT" duration-ms="37362" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test_Other -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:net.calculator.Test.Least_Common_MultipleTest@294425a7]" started-at="2022-08-07T19:05:24 EDT" name="TearDown" finished-at="2022-08-07T19:05:24 EDT" duration-ms="403" status="PASS">
+        </test-method> <!-- Test_Links1 -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:net.calculator.Test.Main_FinancialTest@67d48005]" started-at="2022-08-07T21:41:30 EDT" name="TearDown" finished-at="2022-08-07T21:41:31 EDT" duration-ms="444" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
-      </class> <!-- net.calculator.Test.Least_Common_MultipleTest -->
+        <test-method is-config="true" signature="Setup()[pri:0, instance:net.calculator.Test.Main_FinancialTest@67d48005]" started-at="2022-08-07T21:41:31 EDT" name="Setup" finished-at="2022-08-07T21:41:34 EDT" duration-ms="3187" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="Test_Links2()[pri:2, instance:net.calculator.Test.Main_FinancialTest@67d48005]" started-at="2022-08-07T21:41:34 EDT" name="Test_Links2" finished-at="2022-08-07T21:42:15 EDT" duration-ms="41008" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test_Links2 -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:net.calculator.Test.Main_FinancialTest@67d48005]" started-at="2022-08-07T21:42:15 EDT" name="TearDown" finished-at="2022-08-07T21:42:15 EDT" duration-ms="329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- net.calculator.Test.Main_FinancialTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

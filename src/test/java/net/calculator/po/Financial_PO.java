@@ -1,5 +1,7 @@
 package net.calculator.po;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -40,6 +42,7 @@ WebDriver driver;
 			}
 	        
 	    }*/
+	@SuppressWarnings("unused")
 	public void links() throws InterruptedException
 	{
 		JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -48,7 +51,7 @@ WebDriver driver;
 		Thread.sleep(1000);
 		for (int x =1; x<16;x++)
 		{
-		
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		WebElement link = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/ul[1]/li["+x+"]/a"));
 		Actions action = new Actions(driver);
 		SoftAssert sa = new SoftAssert();
@@ -91,19 +94,23 @@ WebDriver driver;
 		break;
 		default: text = "fix";
 		}
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		sa.assertEquals(link.getText(),text );
-		link.click();
+		if (link != null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			link.click();
+		}else if (link == null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			action.moveToElement(link).build().perform();
+			link.click();
+		}
 		System.out.println("link "+text+ " is verified");
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		System.out.println("Title of the Page :"+Title2.getText());
 		driver.navigate().back();
 		action.sendKeys(Keys.F5);
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		}
 	}
 
-	public static void main(String[] args) {
-		
-	}
 }

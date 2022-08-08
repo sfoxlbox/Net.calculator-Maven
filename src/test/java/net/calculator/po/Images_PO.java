@@ -1,5 +1,7 @@
 package net.calculator.po;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -21,14 +23,16 @@ WebDriver driver;
 	@FindBy (how =How.TAG_NAME, using= "h1")
 	WebElement Title2;
 	
+	@SuppressWarnings("null")
 	public void images() throws InterruptedException
 	{
 		for (int x =1; x<5;x++)
 		{
-		WebElement images = driver.findElement(By.xpath("//table[1]/tbody[1]/tr[1]/td[\"+x+\"]/div[1]/a"));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		WebElement link = driver.findElement(By.xpath("//table[1]/tbody[1]/tr[1]/td[\"+x+\"]/div[1]/a"));
 		
 		WebElement logo = driver.findElement(By.xpath("//tbody/tr[1]/td["+x+"]/div[1]/a[1]/img[1]"));
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		Actions action = new Actions(driver);
 		SoftAssert sa = new SoftAssert();
 		
@@ -48,12 +52,19 @@ WebDriver driver;
 		
 		sa.assertEquals(logo.isDisplayed(), true);
 		System.out.println("Logo "+x+ " is Asserted");
-		images.click();
+		if (link != null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			link.click();
+		}else if (link == null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			action.moveToElement(link).build().perform();
+			link.click();
+		}
 		Thread.sleep(1000);
 		sa.assertEquals(Title2.getText(),text );
 		System.out.println("Title Text "+x+ " is Asserted");
 		driver.navigate().back();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		}
 	}
 }

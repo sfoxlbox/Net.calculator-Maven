@@ -1,5 +1,6 @@
 package net.calculator.po;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -25,11 +26,11 @@ public class Fitness_PO {
 	@FindBy (how =How.TAG_NAME, using= "h1")
 	WebElement Title2;
 	
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation", "unused" })
 	public void links() throws InterruptedException
 	{
 		SoftAssert sa = new SoftAssert();
-		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		Actions action = new Actions(driver);
 		js.executeScript("window.scrollBy(0,400)", "");
@@ -65,7 +66,14 @@ public class Fitness_PO {
 		}
 		Thread.sleep(1000);
 		sa.assertEquals(link.getText(),text );
-		link.click();
+		if (link != null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			link.click();
+		}else if (link == null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			action.moveToElement(link).build().perform();
+			link.click();
+		}
 		action.sendKeys(Keys.F5);
 		System.out.println("link "+text+ " is Asserted");
 		//Thread.sleep(1000);
