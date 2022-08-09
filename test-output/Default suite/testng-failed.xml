@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="net.calculator.Test.Unsplash_Test">
+      <class name="net.calculator.Test.Freeimages_TC">
         <methods>
-          <include name="Test"/>
           <include name="TearDown"/>
+          <include name="Test_location"/>
           <include name="Setup"/>
         </methods>
-      </class> <!-- net.calculator.Test.Unsplash_Test -->
+      </class> <!-- net.calculator.Test.Freeimages_TC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
