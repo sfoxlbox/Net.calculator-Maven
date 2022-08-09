@@ -21,16 +21,7 @@ WebDriver driver;
 	@FindBy (how =How.CLASS_NAME, using= "DG_Wq")
 	WebElement svc;
 	
-	 public Integer size(){
-		 List<WebElement> e = driver.findElements(By.tagName("a"));
-		    int count = 0,a=0;
-		    for (int i = 0; i < e.size(); i++){
-		      count=count+ i;
-		      System.out.println(count);}
-			return count;
-		    }
-	
-	@SuppressWarnings("unlikely-arg-type")
+	 
 	public void links() throws InterruptedException, IOException
 	{
 		//JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -39,15 +30,16 @@ WebDriver driver;
 		 List<WebElement> elements = driver.findElements(By.tagName("a"));
 		 List<WebElement> elements2 = driver.findElements(By.xpath("//a[contains(text(),' ')]"));
 		    
-		    System.out.println("Number of elements:" + elements2.size());
+		    System.out.println("Number of elements:" + elements.size());
 		for ( WebElement e : elements) {
-			if(e.getText() == "") {
-				
+			if(e.getText() != "") {
+				System.out.println(e.getText());
 			}else {
-				System.out.println(e.getText().trim());	
+					
 			}
 		
 		}
+		System.out.println("Number of elements:" + elements.size());
 		    	
 		
 		    }}
