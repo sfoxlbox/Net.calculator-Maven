@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="net.calculator.Test.Unspashed_2_Test">
+      <class name="net.calculator.Test.Main_FinancialTest">
         <methods>
-          <include name="Setup"/>
+          <include name="Test_Links1"/>
           <include name="TearDown"/>
-          <include name="Test"/>
+          <include name="Test_Links2"/>
+          <include name="Setup"/>
         </methods>
-      </class> <!-- net.calculator.Test.Unspashed_2_Test -->
+      </class> <!-- net.calculator.Test.Main_FinancialTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
