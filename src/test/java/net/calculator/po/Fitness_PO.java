@@ -30,7 +30,7 @@ public class Fitness_PO {
 	public void links() throws InterruptedException
 	{
 		SoftAssert sa = new SoftAssert();
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		Actions action = new Actions(driver);
 		js.executeScript("window.scrollBy(0,400)", "");
@@ -68,10 +68,10 @@ public class Fitness_PO {
 		Thread.sleep(1000);
 		sa.assertEquals(link.getText(),text );
 		if (link != null) {
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 			link.click();
 		}else if (link == null) {
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 			action.moveToElement(link).build().perform();
 			link.click();
 		}
