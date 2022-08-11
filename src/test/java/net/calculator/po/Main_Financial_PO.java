@@ -45,10 +45,10 @@ public class Main_Financial_PO {
 			action.moveToElement(link).build().perform();
 			JavascriptExecutor js = (JavascriptExecutor)driver;
 			js.executeScript("window.scrollBy(0,50)", link);
-			action.sendKeys(Keys.F5);
+			
 			//Thread.sleep(4000);
 			link.getText();
-			action.sendKeys(Keys.F5);
+			
 			String [] array= new String [] 
 					{"Mortgage Calculator", 
 					"Amortization Calculator",
@@ -153,7 +153,7 @@ public class Main_Financial_PO {
 			//Thread.sleep(3000);
 			driver.navigate().back();
 			//Thread.sleep(2000);
-			action.sendKeys(Keys.F5);
+			
 			
             }
 			
