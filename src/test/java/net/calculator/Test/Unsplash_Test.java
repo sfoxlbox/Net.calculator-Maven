@@ -24,7 +24,7 @@ public class Unsplash_Test extends base{
 	{
 		unsplash_PO zz = new unsplash_PO(driver);
 		
-		zz.links("cat");
+		zz.links("morocco");
 	}
 	@AfterMethod
 	public  void TearDown()
