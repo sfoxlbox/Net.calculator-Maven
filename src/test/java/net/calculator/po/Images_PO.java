@@ -34,7 +34,7 @@ WebDriver driver;
 		{
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		WebElement link = driver.findElement(By.xpath("//td["+x+"]/div[1]/a/img"));
-		
+		Thread.sleep(800);
 		//WebElement logo = driver.findElement(By.tagName("img"));
 
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
