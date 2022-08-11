@@ -71,9 +71,9 @@ WebDriver driver;
 			action.moveToElement(image).build().perform();
 			image.click();
 		}
-		
+		Thread.sleep(800);
 		WebElement image2 = driver.findElement(By.xpath("//button/div[2]/div[2]/div/img"));
-		
+		Thread.sleep(800);
 		image2.isDisplayed();
 		
 		//File srcFile = (image2.getScreenshotAs(OutputType.FILE));
