@@ -51,7 +51,8 @@ WebDriver driver;
 		Thread.sleep(1000);
 		for (int x =1; x<16;x++)
 		{
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		Thread.sleep(800);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		WebElement link = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/ul[1]/li["+x+"]/a"));
 		Actions action = new Actions(driver);
 		SoftAssert sa = new SoftAssert();
@@ -94,7 +95,7 @@ WebDriver driver;
 		break;
 		default: text = "fix";
 		}
-		//Thread.sleep(2000);
+		
 		sa.assertEquals(link.getText(),text );
 		if (link != null) {
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
@@ -105,11 +106,11 @@ WebDriver driver;
 			link.click();
 		}
 		System.out.println("link "+text+ " is verified");
-		//Thread.sleep(1000);
+		
 		System.out.println("Title of the Page :"+Title2.getText());
 		driver.navigate().back();
 		action.sendKeys(Keys.F5);
-		//Thread.sleep(2000);
+		
 		}
 	}
 
