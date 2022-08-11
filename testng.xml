@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="net.calculator.Test.Loan_CalculatorTest"/>
+      <class name="net.calculator.Test.Repayment_Calculator_Test"/>
+      <class name="net.calculator.Test.Calculator_Test"/>
+      <class name="net.calculator.Test.Other_Calculators_Test"/>
+      <class name="net.calculator.Test.Main_Test"/>
+      <class name="net.calculator.po.Loan_Calculator_PO"/>
+      <class name="net.calculator.Test.Mortgage_Test"/>
+      <class name="net.calculator.Test.Least_Common_MultipleTest"/>
+      <class name="net.calculator.Test.Unsplash_Test"/>
+      <class name="net.calculator.Test.Virtual_Dice_Roller_Test"/>
+      <class name="net.calculator.Test.Math_Test"/>
+      <class name="net.calculator.Test.Fitnesstest"/>
+      <class name="net.calculator.Test.ImagesTest"/>
+      <class name="net.calculator.Test.Unspashed_2_Test"/>
+      <class name="net.calculator.Test.FinancialTest"/>
+      <class name="net.calculator.Test.Main_FinancialTest"/>
+      <class name="net.calculator.Test.PricelineTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
