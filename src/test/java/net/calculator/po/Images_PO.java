@@ -10,6 +10,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
 public class Images_PO {
@@ -29,12 +31,14 @@ WebDriver driver;
 		for (int x =1; x<5;x++)
 		{
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-		WebElement link = driver.findElement(By.xpath("//table[1]/tbody[1]/tr[1]/td[\"+x+\"]/div[1]/a"));
+		WebElement link = driver.findElement(By.xpath("//table/tbody/tr/td[\"+x+\"]/div[1]/a"));
 		
-		WebElement logo = driver.findElement(By.xpath("//tbody/tr[1]/td["+x+"]/div[1]/a[1]/img[1]"));
-		//Thread.sleep(1000);
+		//WebElement logo = driver.findElement(By.tagName("img"));
+
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
 		Actions action = new Actions(driver);
 		SoftAssert sa = new SoftAssert();
+		
 		
 		action.sendKeys(Keys.F5);
 		String text;
@@ -47,10 +51,10 @@ WebDriver driver;
 		break;
 		case 4 : text ="Other Calculators";
 		break;
-		default: text = "fix"; 
+		default: text = "fix it"; 
 		}
-		
-		sa.assertEquals(logo.isDisplayed(), true);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td["+x+"]/div[1]/a[1]/img[1]")));
+		//sa.assertEquals(logo.isDisplayed(), true);
 		System.out.println("Logo "+x+ " is Asserted");
 		if (link != null) {
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));

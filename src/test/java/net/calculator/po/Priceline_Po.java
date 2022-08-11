@@ -37,7 +37,7 @@ WebDriver driver;
 	WebElement Cruises;
 	@FindBy (how = How.XPATH, using= "//div [ contains (text(), 'Cars' )]")
 	WebElement Cars;
-	@FindBy (how = How.XPATH, using= "//div [ contains (text(), 'Bundle + Save' )]")
+	@FindBy (how = How.XPATH, using= "//div [ contains (text(), 'Bundle & Save' )]")
 	WebElement BundleSave;
 	@FindBy (how = How.XPATH, using= "//div [ contains (text(), 'Flights' )]")
 	WebElement Flights;

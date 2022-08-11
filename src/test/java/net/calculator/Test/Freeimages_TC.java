@@ -1,34 +1,32 @@
 package net.calculator.Test;
 
-import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import net.calculator.base;
-import net.calculator.po.unsplash_PO;
+import net.calculator.po.freeimages_po;
 
-public class Unsplash_Test extends base{
+public class Freeimages_TC extends base{
+WebDriver driver;
 	
-	WebDriver driver;
 	@BeforeMethod
 	public void Setup()
 	{
 		driver = setproperty();
-		driver.get("https://unsplash.com/");
+		driver.get("https://www.calculator.net/financial-calculator.html");
 	}
 	@Test
-	public void Test() throws InterruptedException, IOException 
+	public void Test_location() throws InterruptedException 
 	{
-		unsplash_PO zz = new unsplash_PO(driver);
+		freeimages_po Fitness = new freeimages_po(driver);
 		
-		zz.links("cat");
+		Fitness.links();
 	}
-	@AfterMethod
-	public  void TearDown()
-	{
+	  @AfterMethod
+	   public  void TearDown()
+	   { 
 		driver.close();
 		driver.quit();
 		

@@ -17,7 +17,7 @@ public class Unspashed_2_Test extends base{
 	public void Setup()
 	{
 		driver = setproperty();
-		driver.get("https://unsplash.com/");
+		driver.get("http://www.freeimages.com/");
 	}
 	@Test
 	public void Test() throws InterruptedException, IOException 
