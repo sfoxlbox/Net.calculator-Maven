@@ -40,11 +40,11 @@ WebDriver driver;
 	public void links(String input) throws InterruptedException, IOException
 	{
 		//JavascriptExecutor js = (JavascriptExecutor)driver;
-		
+		Thread.sleep(800);
 		Actions action = new Actions(driver);
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		//Title.click();
-		Thread.sleep(2000);
+		Thread.sleep(800);
 		action.moveToElement(gotit).click().perform();
 		//Thread.sleep(1000);
 		action.moveToElement(search).click().perform();
@@ -57,7 +57,7 @@ WebDriver driver;
 		for (int x=1; x < 5; x++) {
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(5));
 			
-			Thread.sleep(500);
+			Thread.sleep(800);
 			WebElement image = driver.findElement(By.xpath("//div[1]/div["+y+"]/figure["+x+"]/div[1]"));
 		action.moveToElement(image).build().perform();
 		Thread.sleep(500);
