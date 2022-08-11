@@ -39,7 +39,8 @@ public class Main_Financial_PO {
 			int num = 30;
 			for (int x =1; x<num;x++)
 			{
-				driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(5));
+			Thread.sleep(800);
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(5));
 			WebElement link = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div["+x+"]/a[1]"));
 			Actions action = new Actions(driver);
 			action.moveToElement(link).build().perform();
