@@ -39,7 +39,7 @@ public class Main_Financial_PO {
 			int num = 30;
 			for (int x =1; x<num;x++)
 			{
-				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+				driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(5));
 			WebElement link = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/div["+x+"]/a[1]"));
 			Actions action = new Actions(driver);
 			action.moveToElement(link).build().perform();
@@ -88,7 +88,7 @@ public class Main_Financial_PO {
 			sa.assertEquals(list2.get(x-1), link.getText());
 			System.out.println(list2.get(x-1) + " is Asserted.");
 			if (link != null) {
-				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+				driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(5));
 				link.click();
 			}else if (link == null) {
 				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));

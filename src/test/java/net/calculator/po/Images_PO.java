@@ -28,6 +28,8 @@ WebDriver driver;
 	@SuppressWarnings("null")
 	public void images() throws InterruptedException
 	{
+		for (int x1 =1; x1<10;x1++)
+		{
 		for (int x =1; x<5;x++)
 		{
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
@@ -36,6 +38,7 @@ WebDriver driver;
 		//WebElement logo = driver.findElement(By.tagName("img"));
 
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.visibilityOf(link));
 		Actions action = new Actions(driver);
 		SoftAssert sa = new SoftAssert();
 		
@@ -53,7 +56,7 @@ WebDriver driver;
 		break;
 		default: text = "fix it"; 
 		}
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td["+x+"]/div[1]/a/img")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td[\"+x+\"]/div[1]/a/img")));
 		//sa.assertEquals(logo.isDisplayed(), true);
 		System.out.println("Logo "+x+ " is Asserted");
 		if (link != null) {
@@ -69,6 +72,6 @@ WebDriver driver;
 		System.out.println("Title Text "+x+ " is Asserted");
 		driver.navigate().back();
 		//Thread.sleep(1000);
-		}
+		}}
 	}
 }

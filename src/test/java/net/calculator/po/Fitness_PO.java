@@ -26,7 +26,7 @@ public class Fitness_PO {
 	@FindBy (how =How.TAG_NAME, using= "h1")
 	WebElement Title2;
 	
-	@SuppressWarnings({ "deprecation", "unused" })
+	@SuppressWarnings({ "unused" })
 	public void links() throws InterruptedException
 	{
 		SoftAssert sa = new SoftAssert();

@@ -55,15 +55,22 @@ WebDriver driver;
 		
 		for (int y=1; y < 4; y++) {
 		for (int x=1; x < 5; x++) {
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(5));
 			
 			Thread.sleep(500);
 			WebElement image = driver.findElement(By.xpath("//div[1]/div["+y+"]/figure["+x+"]/div[1]"));
 		action.moveToElement(image).build().perform();
 		Thread.sleep(500);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(5));
 		wait.until(ExpectedConditions.visibilityOf(image));
-		action.moveToElement(image).click().perform();
+		if (image != null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(5));
+			image.click();
+		}else if (image == null) {
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			action.moveToElement(image).build().perform();
+			image.click();
+		}
 		
 		WebElement image2 = driver.findElement(By.xpath("//button/div[2]/div[2]/div/img"));
 		
