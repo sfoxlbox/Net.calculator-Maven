@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"net.calculator"},{"l":"net.calculator.po"},{"l":"net.calculator.tc"}];updateSearchResults();
