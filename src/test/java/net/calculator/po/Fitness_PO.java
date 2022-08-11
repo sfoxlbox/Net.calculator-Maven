@@ -36,6 +36,7 @@ public class Fitness_PO {
 		js.executeScript("window.scrollBy(0,400)", "");
 		for (int x =1; x<10;x++)
 		{
+		Thread.sleep(800);
 		WebElement link = driver.findElement(By.xpath("//table[1]/tbody[1]/tr[1]/td[2]/ul[1]/li["+x+"]/a"));
 		link.getText();
 		//Thread.sleep(2000);
