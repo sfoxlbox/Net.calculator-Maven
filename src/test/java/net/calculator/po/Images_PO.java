@@ -33,12 +33,12 @@ WebDriver driver;
 		for (int x =1; x<5;x++)
 		{
 		Thread.sleep(800);
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 		WebElement link = driver.findElement(By.xpath("//td["+x+"]/div[1]/a/img"));
 		
 		//WebElement logo = driver.findElement(By.tagName("img"));
 
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(300));
 		wait.until(ExpectedConditions.visibilityOf(link));
 		Actions action = new Actions(driver);
 		SoftAssert sa = new SoftAssert();
@@ -61,10 +61,10 @@ WebDriver driver;
 		//sa.assertEquals(logo.isDisplayed(), true);
 		System.out.println("Logo "+x+ " is Asserted");
 		if (link != null) {
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 			link.click();
 		}else if (link == null) {
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 			action.moveToElement(link).build().perform();
 			link.click();
 		}
