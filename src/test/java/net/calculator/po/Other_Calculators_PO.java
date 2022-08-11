@@ -33,6 +33,7 @@ WebDriver driver;
 		js.executeScript("window.scrollBy(0,400)", "");
 		for (int x =1; x<11;x++)
 		{
+		Thread.sleep(800);
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		WebElement link = driver.findElement(By.xpath("//table[1]/tbody[1]/tr[1]/td[4]/ul[1]/li["+x+"]/a"));
 		link.getText();
