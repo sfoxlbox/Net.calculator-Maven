@@ -28,7 +28,7 @@ WebDriver driver;
 	@SuppressWarnings("null")
 	public void images() throws InterruptedException
 	{
-		for (int x1 =1; x1<10;x1++)
+		for (int x1 =1; x1<2;x1++)
 		{
 		for (int x =1; x<5;x++)
 		{
