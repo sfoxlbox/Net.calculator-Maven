@@ -31,7 +31,7 @@ WebDriver driver;
 		for (int x =1; x<5;x++)
 		{
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-		WebElement link = driver.findElement(By.xpath("//table/tbody/tr/td[\"+x+\"]/div[1]/a"));
+		WebElement link = driver.findElement(By.xpath("//td["+x+"]/div[1]/a/img"));
 		
 		//WebElement logo = driver.findElement(By.tagName("img"));
 
@@ -53,7 +53,7 @@ WebDriver driver;
 		break;
 		default: text = "fix it"; 
 		}
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tbody/tr[1]/td["+x+"]/div[1]/a[1]/img[1]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td["+x+"]/div[1]/a/img")));
 		//sa.assertEquals(logo.isDisplayed(), true);
 		System.out.println("Logo "+x+ " is Asserted");
 		if (link != null) {
