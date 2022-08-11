@@ -32,7 +32,7 @@ public class Main_Financial_PO {
 		public void links() throws InterruptedException 
 		{
 
-			Thread.sleep(500);
+			Thread.sleep(800);
 			List<WebElement> elements = driver.findElements(By.xpath("//tbody/tr[1]/td[1]/div"));
 			System.out.println("Number of elements:" +elements.size());
 			SoftAssert sa = new SoftAssert();
@@ -105,11 +105,12 @@ public class Main_Financial_PO {
 		@SuppressWarnings("unused")
 		public void links2() throws InterruptedException
 		{
-			Thread.sleep(3000);
+			
 			
 			for (int y =1; y<34;y++)
 			{
-				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));	
+			Thread.sleep(800);
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));	
 			WebElement link = driver.findElement(By.xpath("//tbody/tr[1]/td[2]/div["+y+"]/a[1]"));
 			SoftAssert sa = new SoftAssert();
 			Actions action = new Actions(driver);
