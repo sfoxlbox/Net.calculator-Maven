@@ -28,8 +28,9 @@ WebDriver driver;
 	/*public void test100() throws InterruptedException{
 
 		HashSet<WebElement> h_set = new HashSet<WebElement>();
-	       Thread.sleep(2000);
+	       
 	        for (int i = 1; i <= 12; i++) {
+		Thread.sleep(800);
 	            WebElement e = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/ul[1]/li["+i+"]/a"));
 	            e.getText();
 	            h_set.add(e);
@@ -51,8 +52,8 @@ WebDriver driver;
 		Thread.sleep(1000);
 		for (int x =1; x<16;x++)
 		{
-		Thread.sleep(800);
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		Thread.sleep(1000);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 		WebElement link = driver.findElement(By.xpath("//tbody/tr[1]/td[1]/ul[1]/li["+x+"]/a"));
 		Actions action = new Actions(driver);
 		SoftAssert sa = new SoftAssert();
