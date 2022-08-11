@@ -61,7 +61,7 @@ WebDriver driver;
 		Thread.sleep(500);
 		action.moveToElement(image).click().perform();
 		
-		WebElement image2 = driver.findElement(By.xpath("//button[1]/div[2]/div[2]/div[1]/img[1]"));
+		WebElement image2 = driver.findElement(By.xpath("//button/div[2]/div[2]/div/img"));
 		
 		image2.isDisplayed();
 		
