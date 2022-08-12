@@ -96,7 +96,7 @@ WebDriver driver;
 		break;
 		default: text = "fix";
 		}
-		
+		Thread.sleep(1000);
 		sa.assertEquals(link.getText(),text );
 		if (link != null) {
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
