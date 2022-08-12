@@ -86,6 +86,7 @@ public class Main_Financial_PO {
 		      /*for(String e : array) {
 		    	  System.out.println(e);
 		      }*/
+			Thread.sleep(800);
 			sa.assertEquals(list2.get(x-1), link.getText());
 			System.out.println(list2.get(x-1) + " is Asserted.");
 			if (link != null) {
@@ -142,8 +143,9 @@ public class Main_Financial_PO {
 			List<String> list2 = new ArrayList<String>();
 		      for(String text:array) {
 		         list2.add(text);}
+			Thread.sleep(800);
 			sa.assertEquals(list2.get(y-1), link.getText());
-			System.out.println(list2.get(y-1) + " is Asserted.");
+			System.out.println(list2.get(y-1) + " is Veified.");
 			if (link != null) {
 				driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 				link.click();
